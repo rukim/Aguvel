@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppComponent } from './app.component';
 import { AgregarDatosComponent } from './agregar-datos/agregar-datos.component';
 import { DisenoComponent } from './interfaz/diseno/diseno.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,8 @@ import { DisenoComponent } from './interfaz/diseno/diseno.component';
     DisenoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
