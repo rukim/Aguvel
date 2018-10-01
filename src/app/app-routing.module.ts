@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {AgregarDatosComponent} from './agregar-datos/agregar-datos.component';
-import {AppComponent} from './app.component';
-
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
-  {path: '', component: AppComponent},
+  {path: '', component: LoginComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'datos', component: AgregarDatosComponent}
 
 ];
