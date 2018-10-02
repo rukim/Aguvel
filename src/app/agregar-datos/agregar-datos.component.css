@@ -1,15 +1,22 @@
-.container {
-  padding-top: 120px;  
+.contenedor {
+  padding-top: 50px;  
   padding-left: 0px;
   padding-right: 0px;
   margin-left: 0px;
   margin-left: 0px;
   max-width: 2000px;
+  
+}
+
+.contenedor-titulo{
+  margin-bottom: 5px;
+  background-color: rgb(93, 208, 247);
+  border: 2px solid black;
 }
 
 .text-center{
   vertical-align: middle;
-  background-color: rgb(45, 45, 209);
+  background-color: rgb(17, 17, 243);
   color: aliceblue;
   border: 2px solid black;
   
@@ -17,4 +24,28 @@
 
 .espacio{
   min-width: 100px;
+}
+
+h1,h2{
+  text-align: center;
+}
+textarea {
+  resize: none;
+  width: 300px;
+  height: 100px;
+}
+
+.boton[type="submit"] {
+  background: rgb(4, 4, 90) none repeat scroll 0 0;
+  border: 1px solid #4f5c04;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 35px;
+  margin: 10px 0;
+  padding: 0;
+  text-transform: uppercase;
+  width:10%;
+  display: inline-block;
 }

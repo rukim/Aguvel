@@ -12,12 +12,16 @@ function createWindow() {
     url.format({
       pathname: path.join(__dirname, `/dist/index.html`),
       protocol: "file:",
-      slashes: true
+      slashes: true,
+      icon: path.join(__dirname, '/assets/images/AyA.jpeg')
     })
   );
 
   // The following is optional and will open the DevTools:
   // win.webContents.openDevTools()
+  win.setMenu(null)
+
+  win.maximize()
 
   win.on("closed", () => {
     win = null;
