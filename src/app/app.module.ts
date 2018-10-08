@@ -7,13 +7,15 @@ import { AgregarDatosComponent } from './agregar-datos/agregar-datos.component';
 import { DisenoComponent } from './interfaz/diseno/diseno.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
+import { AgregarPerfilesComponent } from './agregar-perfiles/agregar-perfiles.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AgregarDatosComponent,
     DisenoComponent,
-    LoginComponent
+    LoginComponent,
+    AgregarPerfilesComponent
   ],
   imports: [
     BrowserModule,
