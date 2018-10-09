@@ -1,6 +1,7 @@
 const { app, BrowserWindow } = require("electron");
-const path = require("path");
+
 const url = require("url");
+var path = require('path');
 
 let win;
 
@@ -13,7 +14,7 @@ function createWindow() {
       pathname: path.join(__dirname, `/dist/index.html`),
       protocol: "file:",
       slashes: true,
-      icon: path.join(__dirname, '/assets/images/AyA.jpeg')
+      icon: path.join(__dirname, `/assets/images/favicon.ico`)
     })
   );
 

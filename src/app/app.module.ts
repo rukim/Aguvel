@@ -1,7 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AlertComponent } from './_directives';
+import { AuthGuard } from './_guards';
+import { JwtInterceptor, ErrorInterceptor } from './_helpers';
+import { AlertService, AuthenticationService, UserService } from './_services';
+import { fakeBackendProvider } from './_helpers';
 
 import { AppComponent } from './app.component';
 import { AgregarDatosComponent } from './agregar-datos/agregar-datos.component';
@@ -15,6 +20,7 @@ import { LoginComponent } from './login/login.component';
     AgregarDatosComponent,
     DisenoComponent,
     LoginComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +29,17 @@ import { LoginComponent } from './login/login.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+        AlertService,
+        AuthenticationService,
+        UserService,
+        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+        // provider used to create fake backend
+        fakeBackendProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
