@@ -3,10 +3,16 @@
     <div class="loginmodal-container">
       <img src="assets/images/AyA.jpeg" class="img-responsive" alt="AyA"/>
       <h1>Ingresar al Sistema</h1><br>
-        <form>
-          <input type="text" name="usuario" placeholder="Usuario">
-          <input type="password" name="contraseña" placeholder="Contraseña">
-          <input type="submit" name="ingresar" class="login loginmodal-submit" value="Ingresar" >
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <input type="text" formControlName="usuario" class="form-control" placeholder="Usuario" [ngClass]="{ 'is-invalid': submitted && f.usuario.errors }"/>   
+          <div *ngIf="submitted && f.usuario.errors" class="invalid-feedback">
+            <div *ngIf="f.usuario.errors.required">Usuario es requerido </div>
+          </div>    
+          <input type="password" formControlName="contrasena" class="form-control" placeholder="Contraseña" [ngClass]="{ 'is-invalid': submitted && f.contrasena.errors }">
+          <div *ngIf="submitted && f.contrasena.errors" class="invalid-feedback">
+            <div *ngIf="f.contrasena.errors.required">Contraseña es requerida</div>
+          </div>
+          <input type="submit" name="ingresar" (click)="login($event)" class="login loginmodal-submit" value="Ingresar" >
           <a routerLink ="/datos">Datos</a>
         </form> 
         <router-outlet></router-outlet>           

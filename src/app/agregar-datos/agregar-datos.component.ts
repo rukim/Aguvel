@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgregarDatosComponent implements OnInit {
 
+  title = 'prueba';
   constructor() { }
 
   ngOnInit() {
   }
 
 }
+

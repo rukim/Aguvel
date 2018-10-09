@@ -1,11 +1,12 @@
 <app-diseno>
-  <div class="contenedor">
+  <script src= "agregar-datos.component.js"></script>
+  <div class="contenedor" ng-app = "agregarApp" ng-controller = "agregarController">
     <div class="contenedor-titulo">
       <h1>
         Instituto Costarricense De Acueductos y Alcantarillados
       </h1>
       <h2>
-        Region Central Oeste
+        Region Central Oeste 
       </h2>
     </div>
     <div class="row clearfix">
@@ -212,7 +213,7 @@
                   <input id="hora" name="hora" class="form-control" type="time">
                 </td>
                 <td data-name="flujo-entrada">
-                  <input type="text" class="form-control" id="flujo-entrada">
+                  <input type="text" ng-model = "flujoEntrada" class="form-control" id="flujo-entrada">
                 </td>
                 <td data-name="volumen-salida">
                   <input type="text" class="form-control" id="volumen-salida">
@@ -301,5 +302,6 @@
       </div>
     </div>
     <input type="submit" value="Guardar" name="Guardar" class="boton">
+    <input type="submit" value="Exportar" name="Exportar" class="boton">
   </div>
 </app-diseno>
