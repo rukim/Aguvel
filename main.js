@@ -1,12 +1,12 @@
 const { app, BrowserWindow } = require("electron");
 
 const url = require("url");
-var path = require('path');
+const path = require("path");
 
 let win;
 
 function createWindow() {
-  win = new BrowserWindow({ width: 800, height: 600 });
+  win = new BrowserWindow({ width: 800, height: 600, icon: path.join(__dirname, `src/assets/images/favicon.ico`) });
 
   // load the dist folder from Angular
   win.loadURL(
@@ -14,7 +14,7 @@ function createWindow() {
       pathname: path.join(__dirname, `/dist/index.html`),
       protocol: "file:",
       slashes: true,
-      icon: path.join(__dirname, `/assets/images/favicon.ico`)
+      icon: path.join(__dirname, `src/assets/images/favicon.ico`)
     })
   );
 

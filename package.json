@@ -11,6 +11,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "build": {
+    "win": {
+      "icon": "src/assets/images/favicon.ico"
+    }
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.1.0",
