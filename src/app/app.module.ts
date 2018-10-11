@@ -2,11 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AlertComponent } from './_directives';
-import { AuthGuard } from './_guards';
-import { JwtInterceptor, ErrorInterceptor } from './_helpers';
-import { AlertService, AuthenticationService, UserService } from './_services';
-import { fakeBackendProvider } from './_helpers';
+import { AlertComponent } from './_directivos';
+import { AuthGuard } from './_guardia';
+import { JwtInterceptor, ErrorInterceptor } from './_ayudantes';
+import { AlertService, AuthenticationService, UserService } from './_servicios';
+import { fakeBackendProvider } from './_ayudantes';
 
 import { AppComponent } from './app.component';
 import { AgregarDatosComponent } from './agregar-datos/agregar-datos.component';
