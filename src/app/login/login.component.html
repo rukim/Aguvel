@@ -3,12 +3,15 @@
     <div class="loginmodal-container">
       <img src="assets/images/AyA.jpeg" class="img-responsive" alt="AyA"/>
       <h1>Ingresar al Sistema</h1><br>
+      <!--Se inicia el formulario y se llama al metodo de submitir-->
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <input type="text" formControlName="usuario" class="form-control" placeholder="Usuario" [ngClass]="{ 'is-invalid': submitted && f.usuario.errors }"/>   
+          <!--Si no hay nada escrito en el campo tira un error-->
           <div *ngIf="submitted && f.usuario.errors" class="invalid-feedback">
             <div *ngIf="f.usuario.errors.required">Usuario es requerido </div>
           </div>    
           <input type="password" formControlName="contrasena" class="form-control" placeholder="Contraseña" [ngClass]="{ 'is-invalid': submitted && f.contrasena.errors }">
+          <!--Si no hay nada escrito en el campo tira un error-->
           <div *ngIf="submitted && f.contrasena.errors" class="invalid-feedback">
             <div *ngIf="f.contrasena.errors.required">Contraseña es requerida</div>
           </div>
