@@ -17,10 +17,12 @@ export class LoginComponent implements OnInit {
     { id:1 , username: "Ruben", password: "1234567", firstName: "Ruben", lastName: "Umaña"},
   ];
   
+  //Controlador del formulario
   loginForm: FormGroup;
   loading = false;
   submitted = false;
   returnUrl: string;
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -30,55 +32,55 @@ export class LoginComponent implements OnInit {
     private authenticationService: AuthenticationService,
     private alertService: AlertService) {}
 
-  ngOnInit() {
+  ngOnInit(){
+    //Inicia el formulario
     this.loginForm = this.formBuilder.group({
       usuario: ['', Validators.required],
       contrasena: ['', Validators.required]
     });
 
+    //Registra un usuario (temporal)
     this.userService.register(this.usuariosValidos[0])
-            .pipe(first())
-            .subscribe(
-                data => {
-                    this.alertService.success('Registration successful', true);
-                    this.router.navigate(['/login']);
-                },
-                error => {
-                    this.alertService.error(error);
-                    this.loading = false;
-                });
+      .pipe(first())
+      .subscribe(
+      data => {
+        this.alertService.success('Registration successful', true);
+        this.router.navigate(['/login']);
+      },
+      error => {
+        this.alertService.error(error);
+        this.loading = false;
+    });
     
    
-    // reset login status
+    // resetea el status de login
     this.authenticationService.logout();
 
-    // get return url from route parameters or default to '/'
+    //Si no esta logueado lo devuelve a la pagina del login
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
-  // convenience getter for easy access to form fields
+  // conveniencia a la hora de llamar a los valores del formulario
   get f() { return this.loginForm.controls; }
 
   onSubmit() {
     this.submitted = true;
 
-    // stop here if form is invalid
+    // se detiene si el formulario si es invalido
     if (this.loginForm.invalid) {
       return;
     }
-    console.log(this.f.usuario.value, this.f.contrasena.value);
     this.loading = true;
+    //llama al login y le manda los datos, loguea si son correctos y si no entonces tira un error
     this.authenticationService.login(this.f.usuario.value, this.f.contrasena.value)
       .pipe(first())
       .subscribe(
-          data => {
-            console.log("login");
-            this.router.navigate(["/datos"]);
-          },
-          error => {
-            console.log("error");
-            this.alertService.error(error);
-            this.loading = false;
-          });
+        data => {
+          this.router.navigate(["/datos"]);
+        },
+        error => {
+          this.alertService.error(error);
+          this.loading = false;
+    });
   }
 }

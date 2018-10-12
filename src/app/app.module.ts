@@ -13,7 +13,11 @@ import { AgregarDatosComponent } from './agregar-datos/agregar-datos.component';
 import { DisenoComponent } from './interfaz/diseno/diseno.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
+<<<<<<< HEAD
 import { SlideMenuComponent } from './interfaz/slide-menu/slide-menu.component';
+=======
+import { AgregarPerfilesComponent } from './agregar-perfiles/agregar-perfiles.component';
+>>>>>>> 0fe4c25293c72bffb9ef79358571b5698bd85449
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { SlideMenuComponent } from './interfaz/slide-menu/slide-menu.component';
     DisenoComponent,
     LoginComponent,
     AlertComponent,
+<<<<<<< HEAD
     SlideMenuComponent
+=======
+    AgregarPerfilesComponent
+>>>>>>> 0fe4c25293c72bffb9ef79358571b5698bd85449
   ],
   imports: [
     BrowserModule,
