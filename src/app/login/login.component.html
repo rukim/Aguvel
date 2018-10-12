@@ -17,8 +17,18 @@
           </div>
           <input type="submit" name="ingresar" class="login loginmodal-submit" value="Ingresar" >
           <img *ngIf="loading" src= "assets/images/loading.gif"/>
-          <a routerLink ="/datos">Datos</a>
-          <a routerLink ="/añadirPerfiles">Añadir perfiles</a>
+          
+          <table style="width:100%">
+            <tr>
+                <td align="left">
+                  <a routerLink ="/datos">Datos</a>
+                </td>
+                <td align="right">
+                  <a routerLink ="/añadirPerfiles">Añadir perfiles</a>
+                </td>
+            </tr>
+          </table>
+
         </form> 
         <router-outlet></router-outlet>           
     </div>

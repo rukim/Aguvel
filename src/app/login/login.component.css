@@ -1,6 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
 
+.loginmodal-container:focus, .loginmodal-container:hover {
+  transform: scale(1.1);
+}
+
+.loginmodal-container:focus .loginmodal-container:before {
+  display: block;
+}
+
 .center{
   padding-top: 70px;
   margin: auto;
