@@ -13,6 +13,7 @@ import { AgregarDatosComponent } from './agregar-datos/agregar-datos.component';
 import { DisenoComponent } from './interfaz/diseno/diseno.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
+import { SlideMenuComponent } from './interfaz/slide-menu/slide-menu.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LoginComponent } from './login/login.component';
     AgregarDatosComponent,
     DisenoComponent,
     LoginComponent,
-    AlertComponent
+    AlertComponent,
+    SlideMenuComponent
   ],
   imports: [
     BrowserModule,
