@@ -1,7 +1,30 @@
 export class datosAgua {
   id: number;
-  username: string;
-  password: string;
-  firstName: string;
-  lastName: string;
+  fecha: number;
+  hora: number;
+  flujoEntrada: number;
+  volumenAS1: number;
+  flujoSalida: number;
+  volumenAS2: number;
+  dosificacionCloro: number;
+  pesoCilindro1: number;
+  pesoCilindro2: number;
+  presionEyectorA: number;
+  presionEyectorD: number;
+  presionAqmE: number;
+  presionAqmS: number;
+  presionAdE: number;
+  presionAdS: number;
+  phE: number;
+  phET: number;
+  phS: number;
+  phST: number;
+  cloroL: number;
+  cloroT: number;
+  arsenicoE: number;
+  arsenicoS: number;
+  manganesoE: number;
+  manganesoS: number;
+  hierroE: number;
+  hierroS: number;
 }
