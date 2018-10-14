@@ -13,10 +13,7 @@ import { AgregarDatosComponent } from './agregar-datos/agregar-datos.component';
 import { DisenoComponent } from './interfaz/diseno/diseno.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
-<<<<<<< HEAD
 import { SlideMenuComponent } from './interfaz/slide-menu/slide-menu.component';
-=======
->>>>>>> fb681cd1c2f510e0c314dec3c0deb9e84f62c08c
 import { AgregarPerfilesComponent } from './agregar-perfiles/agregar-perfiles.component';
 
 @NgModule({
@@ -25,11 +22,8 @@ import { AgregarPerfilesComponent } from './agregar-perfiles/agregar-perfiles.co
     AgregarDatosComponent,
     DisenoComponent,
     LoginComponent,
-<<<<<<< HEAD
     AlertComponent,
     SlideMenuComponent,
-=======
->>>>>>> fb681cd1c2f510e0c314dec3c0deb9e84f62c08c
     AgregarPerfilesComponent
   ],
   imports: [
