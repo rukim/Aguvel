@@ -17,6 +17,7 @@
             <div *ngIf="f.contrasena.errors.required">Contraseña es requerida</div>
           </div>
           <input type="submit" name="ingresar" class="login loginmodal-submit" value="Ingresar" >
+<<<<<<< HEAD
           <img *ngIf="loading" src= "assets/images/loading.gif"/>
           
           <table style="width:100%">
@@ -30,6 +31,10 @@
             </tr>
           </table>
 
+=======
+          <a routerLink ="/datos">Datos</a>
+          <a routerLink ="/perfiles">Perfiles</a>
+>>>>>>> fb681cd1c2f510e0c314dec3c0deb9e84f62c08c
         </form> 
         <router-outlet></router-outlet>           
     </div>
