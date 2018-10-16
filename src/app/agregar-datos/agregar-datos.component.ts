@@ -79,6 +79,7 @@ export class AgregarDatosComponent implements OnInit {
           this.loading = false;
       });
       this.dataForm.reset();
+      this.submitted = false;
    }
 
 }
