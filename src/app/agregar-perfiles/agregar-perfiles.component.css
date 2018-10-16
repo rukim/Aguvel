@@ -1,4 +1,4 @@
-
+/*Estilos de la barra de opciones principales: empieza*/
 
 header{
     width: 100;
@@ -40,6 +40,8 @@ header label:hover{
     text-decoration: none;
 }
 
+/*Estilos de la barra de opciones principales: termina*/
+
 
 /*Form de registro*/
 
@@ -52,8 +54,18 @@ h1 {
     text-align: center;
     font-size: 1.8em;
     font-family: roboto;
+}
+
+/*Este es el div que contiene al form, aca se centra*/
+#cuerpo {
+    display: table;
+  margin: 0 auto;
   }
 
-input#nombre{
-    padding-right: 35px; /*Sirve para darle espacio a la izquierda al campo de dexto de Nombre Completo*/
+input{
+    border-radius: 5px;
+}
+
+#nombre{
+    padding-right: 40px; /*Sirve para darle espacio a la izquierda al campo de dexto de Nombre Completo*/
 }

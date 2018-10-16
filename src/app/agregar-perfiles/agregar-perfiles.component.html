@@ -24,22 +24,30 @@
             </tr>
             <tr>
               <td><img src="assets/images/AyA.jpeg" class="img-responsive" alt="AyA"/></td>
-              <td style="width:75%" valign="top"><h1>Registrar usuario</h1></td>
+              <td style="width:75%" ><h1>Registrar usuario</h1></td>
             </tr>
-          </table> 
+          </table> <br/>
 
         </div>
         <div id="cuerpo">
 
           <form id="form-login" action="" method="post" autocomplete="off">
             <!--Required es nuevo en html5, si el campo está vacío te avisa, pero cuidado, no valida la información-->
-            <label >Nombre:</label><br/>
-            <input name="nombre" type="text" id="nombre" placeholder="Escriba su nombre completo" autofocus="" required=""><br/><br/>
+            <input name="nombre" type="text" id="nombre" placeholder="Nombre de usuario*" autofocus="" required="">&nbsp;&nbsp;
 
-            <label>Contraseña:</label><br/>
-            <input name="contrasenia" type="password" id="contrasenia" placeholder="Escriba su contraseña" required="">
+            <input name="contraseña" type="contraseña" id="contraseña" placeholder="Contraseña*" required="">&nbsp;&nbsp;
             
-            <p id="bot"><input type="submit" id="submit" name="submit" value="Registrarse" class="boton"></p>
+            <input name="email" type="email" id="email" placeholder="Email*" required=""><br/><br/>
+            
+            <input name="cedula" type="cedula" id="cedula" placeholder="Cedula*" required="">&nbsp;&nbsp;
+            
+            <label >Tipo de usuario:* </label>
+            <select>
+                <option value="administrador">Administrador</option>
+                <option value="regular">Regular</option>
+            </select><br/><br/>
+
+            <p id="bot"><input type="submit" id="submit" name="submit" value="Registrarse" class="boton"></p><br/>
           </form>
 
         </div><!--Fin cuerpo-->
