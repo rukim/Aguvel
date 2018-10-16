@@ -39,3 +39,21 @@ header label:hover{
     color: #fff;
     text-decoration: none;
 }
+
+
+/*Form de registro*/
+
+#envoltura {
+    background-color: #F7F7F7;
+}
+
+/*h1 es el tipo de etiqueta para el texto "Registrar Usuario"*/
+h1 {
+    text-align: center;
+    font-size: 1.8em;
+    font-family: roboto;
+  }
+
+input#nombre{
+    padding-right: 35px; /*Sirve para darle espacio a la izquierda al campo de dexto de Nombre Completo*/
+}
