@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './_directivos';
 import { AuthGuard } from './_guardia';
 import { JwtInterceptor, ErrorInterceptor } from './_ayudantes';
-import { AlertService, AuthenticationService, UserService } from './_servicios';
+import { AlertService, AuthenticationService, UserService, AguaService } from './_servicios';
 import { fakeBackendProvider } from './_ayudantes';
 
 import { AppComponent } from './app.component';
@@ -38,6 +38,7 @@ import { AgregarPerfilesComponent } from './agregar-perfiles/agregar-perfiles.co
         AlertService,
         AuthenticationService,
         UserService,
+        AguaService,
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 

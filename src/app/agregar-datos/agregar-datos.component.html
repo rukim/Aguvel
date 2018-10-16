@@ -1,6 +1,4 @@
 <app-diseno>
-    <app-slide-menu> 
-      
   <script src= "agregar-datos.component.js"></script>
   <div class="contenedor" ng-app = "agregarApp" ng-controller = "agregarController">
     <div class="contenedor-titulo">
@@ -13,16 +11,10 @@
     </div>
     <div class="row clearfix">
       <div class="col-md-12 table-responsive">
-        <form>
+        <form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
           <table class="table table-bordered table-hover table-sortable" id="tab_logic">
             <thead>
               <tr >
-                <th rowspan="3" class="text-center">
-                  Fecha
-                </th>
-                <th rowspan="3" class="text-center">
-                  Hora
-                </th>
                 <th rowspan="2" class="text-center">
                   Flujo de Entrada
                 </th>
@@ -208,86 +200,80 @@
             </thead>
             <tbody>
               <tr class="hidden">
-                <td data-name="fecha">
-                  <input id="fecha" name="fecha" class="form-control" type="date">
-                </td>
-                <td data-name="hora">
-                  <input id="hora" name="hora" class="form-control" type="time">
-                </td>
                 <td data-name="flujo-entrada">
-                  <input type="text" ng-model = "flujoEntrada" class="form-control" id="flujo-entrada">
+                  <input type="text" formControlName="flujoEntrada" [ngClass]="{'is-invalid': submitted && f.flujoEntrada.errors }"  class="form-control" id="flujo-entrada">
                 </td>
                 <td data-name="volumen-salida">
-                  <input type="text" class="form-control" id="volumen-salida">
+                  <input type="text" formControlName="volumenAS1" [ngClass]="{'is-invalid': submitted && f.volumenAS1.errors }" class="form-control" id="volumen-salida">
                 </td>
                 <td data-name="flujo-salida">
-                  <input type="text" class="form-control" id="flujo-salida">
+                  <input type="text" formControlName="flujoSalida" [ngClass]="{'is-invalid': submitted && f.flujoSalida.errors }" class="form-control" id="flujo-salida">
                 </td>
                 <td data-name="volumen-salida">
-                  <input type="text" class="form-control" id="volumen-salida">
+                  <input type="text" formControlName="volumenAS2" [ngClass]="{'is-invalid': submitted && f.volumenAS2.errors }" class="form-control" id="volumen-salida">
                 </td>
                 <td data-name="dosis-cloro">
-                  <input type="text" class="form-control" id="dosis-cloro">
+                  <input type="text" formControlName="dosificacionCloro" [ngClass]="{'is-invalid': submitted && f.dosificacionCloro.errors }" class="form-control" id="dosis-cloro">
                 </td>
                 <td data-name="cilindro1">
-                  <input type="text" class="form-control" id="cilindro1">
+                  <input type="text" formControlName="pesoCilindro1" [ngClass]="{'is-invalid': submitted && f.pesoCilindro1.errors }" class="form-control" id="cilindro1">
                 </td>
                 <td data-name="cilindro2">
-                  <input type="text" class="form-control" id="cilindro2">
+                  <input type="text" formControlName="pesoCilindro2" [ngClass]="{'is-invalid': submitted && f.pesoCilindro2.errors }" class="form-control" id="cilindro2">
                 </td>
                 <td data-name="eyector-antes">
-                  <input type="text" class="form-control" id="eyector-antes">
+                  <input type="text" formControlName="presionEyectorA" [ngClass]="{'is-invalid': submitted && f.presionEyectorA.errors }" class="form-control" id="eyector-antes">
                 </td>
                 <td data-name="eyector-despues">
-                  <input type="text" class="form-control" id="eyector-despues">
+                  <input type="text" formControlName="presionEyectorD" [ngClass]="{'is-invalid': submitted && f.presionEyectorD.errors }" class="form-control" id="eyector-despues">
                 </td>
                 <td data-name="aqm-entrada">
-                  <input type="text" class="form-control" id="aqm-entrada">
+                  <input type="text" formControlName="presionAqmE" [ngClass]="{'is-invalid': submitted && f.presionAqmE.errors }" class="form-control" id="aqm-entrada">
                 </td>
                 <td data-name="aqm-salida">
-                  <input type="text" class="form-control" id="aqm-salida">
+                  <input type="text" formControlName="presionAqmS" [ngClass]="{'is-invalid': submitted && f.presionAqmS.errors }" class="form-control" id="aqm-salida">
                 </td>
                 <td data-name="ad-entrada">
-                  <input type="text" class="form-control" id="ad-entrada">
+                  <input type="text" formControlName="presionAdE" [ngClass]="{'is-invalid': submitted && f.presionAdE.errors }" class="form-control" id="ad-entrada">
                 </td>
                 <td data-name="ad-salida">
-                  <input type="text" class="form-control" id="ad-salida">
+                  <input type="text" formControlName="presionAdS" [ngClass]="{'is-invalid': submitted && f.presionAdS.errors }" class="form-control" id="ad-salida">
                 </td>
                 <td data-name="ph-entrada">
-                  <input type="text" class="form-control" id="ph-entrada">
+                  <input type="text" formControlName="phE" [ngClass]="{'is-invalid': submitted && f.phE.errors }" class="form-control" id="ph-entrada">
                 </td>
                 <td data-name="temperatura-entrada">
-                  <input type="text" class="form-control" id="temperatura-entrada">
+                  <input type="text" formControlName="phET" [ngClass]="{'is-invalid': submitted && f.phET.errors }" class="form-control" id="temperatura-entrada">
                 </td>
                 <td data-name="ph-salida">
-                  <input type="text" class="form-control" id="ph-salida">
+                  <input type="text" formControlName="phS" [ngClass]="{'is-invalid': submitted && f.phS.errors }" class="form-control" id="ph-salida">
                 </td>
                 <td data-name="temperatura-salida">
-                  <input type="text" class="form-control" id="temperatura-salida">
+                  <input type="text" formControlName="phST" [ngClass]="{'is-invalid': submitted && f.phST.errors }" class="form-control" id="temperatura-salida">
                 </td>
                 <td data-name="cloro">
-                  <input type="text" class="form-control" id="cloro">
+                  <input type="text" formControlName="cloroL" [ngClass]="{'is-invalid': submitted && f.cloroL.errors }" class="form-control" id="cloro">
                 </td>
                 <td data-name="cloro-temperatura">
-                  <input type="text" class="form-control" id="cloro-temperatura">
+                  <input type="text" formControlName="cloroT" [ngClass]="{'is-invalid': submitted && f.cloroT.errors }" class="form-control" id="cloro-temperatura">
                 </td>
                 <td data-name="arsenico-entrada">
-                  <input type="text" class="form-control" id="arsenico-entrada">
+                  <input type="text" formControlName="arsenicoE" [ngClass]="{'is-invalid': submitted && f.arsenicoE.errors }" class="form-control" id="arsenico-entrada">
                 </td>
                 <td data-name="arsenico-salida">
-                  <input type="text" class="form-control" id="arsenico-salida">
+                  <input type="text" formControlName="arsenicoS" [ngClass]="{'is-invalid': submitted && f.arsenicoS.errors }" class="form-control" id="arsenico-salida">
                 </td>
                 <td data-name="manganeso-entrada">
-                  <input type="text" class="form-control" id="manganeso-entrada">
+                  <input type="text" formControlName="manganesoE" [ngClass]="{'is-invalid': submitted && f.manganesoE.errors }" class="form-control" id="manganeso-entrada">
                 </td>
                 <td data-name="manganeso-salida">
-                  <input type="text" class="form-control" id="manganeso-salida">
+                  <input type="text" formControlName="manganesoS" [ngClass]="{'is-invalid': submitted && f.manganesoS.errors }" class="form-control" id="manganeso-salida">
                 </td>
                 <td data-name="hierro-entrada">
-                  <input type="text" class="form-control" id="hierro-entrada">
+                  <input type="text" formControlName="hierroE" [ngClass]="{'is-invalid': submitted && f.hierroE.errors }" class="form-control" id="hierro-entrada">
                 </td>
                 <td data-name="hierro-salida">
-                  <input type="text" class="form-control" id="hierro-salida">
+                  <input type="text" formControlName="hierroS" [ngClass]="{'is-invalid': submitted && f.hierroS.errors }" class="form-control" id="hierro-salida">
                 </td>
               </tr>
               <tr>
@@ -295,16 +281,14 @@
                   Observaciones 
                 </td>
                 <td colspan="4" >
-                  <textarea class="form-control" id="observacion"></textarea>
+                  <textarea class="form-control" formControlName="observaciones" id="observacion"></textarea>
                 </td>             
               </tr>
             </tbody>
-          </table>   
+          </table>
+          <input type="submit" value="Guardar" name="Guardar" class="boton"> 
         </form> 
       </div>
     </div>
-    <input type="submit" value="Guardar" name="Guardar" class="boton">
-    <input type="submit" value="Exportar" name="Exportar" class="boton">
   </div>
-</app-slide-menu>
 </app-diseno>
