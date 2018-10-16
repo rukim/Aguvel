@@ -1,7 +1,6 @@
 export class datosAgua {
   id: number;
-  fecha: number;
-  hora: number;
+  fecha: string;
   flujoEntrada: number;
   volumenAS1: number;
   flujoSalida: number;
@@ -27,4 +26,5 @@ export class datosAgua {
   manganesoS: number;
   hierroE: number;
   hierroS: number;
+  observaciones: string;
 }
