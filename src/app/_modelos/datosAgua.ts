@@ -1,6 +1,6 @@
 export class datosAgua {
   id: number;
-  fecha: number;
+  fecha: string;
   flujoEntrada: number;
   volumenAS1: number;
   flujoSalida: number;

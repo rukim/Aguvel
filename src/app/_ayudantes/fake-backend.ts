@@ -2,16 +2,19 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
+import { DatePipe } from '@angular/common';
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
 
-    constructor() { }
+    constructor(private datePipe: DatePipe) {}
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // array in local storage for registered users
         let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
         let datosAgua: any[] = JSON.parse(localStorage.getItem('datosAgua')) || [];
+        var date = new Date();
+    
 
         // wrap in delayed observable to simulate server api call
         return of(null).pipe(mergeMap(() => {
@@ -95,7 +98,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
                 // save new user
                 newDatosAgua.id = datosAgua.length + 1;
-                newDatosAgua.fecha = Date.now();
+                newDatosAgua.fecha = this.datePipe.transform(date,"dd-MM-yyyy h:mm a"); 
                 datosAgua.push(newDatosAgua);
                 localStorage.setItem('datosAgua', JSON.stringify(datosAgua));
 

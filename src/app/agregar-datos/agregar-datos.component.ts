@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
+
 import { AguaService } from '../_servicios';
 
 @Component({
@@ -12,6 +13,8 @@ import { AguaService } from '../_servicios';
 })
 export class AgregarDatosComponent implements OnInit {
 
+  
+  
   today: number = Date.now();
   dataForm: FormGroup;
   loading = false;
