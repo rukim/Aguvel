@@ -11,6 +11,7 @@ import { User } from '../_modelos';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
   //usuarios de prueba
   public usuariosValidos: User[] = [
