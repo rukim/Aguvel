@@ -11,7 +11,7 @@ import { DatePipe } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AgregarDatosComponent } from './agregar-datos/agregar-datos.component';
 import { DisenoComponent } from './interfaz/diseno/diseno.component';
-import { AppRoutingModule } from './app-routing.module';
+import { routing } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { SlideMenuComponent } from './interfaz/slide-menu/slide-menu.component';
 import { AgregarPerfilesComponent } from './agregar-perfiles/agregar-perfiles.component';
@@ -28,7 +28,7 @@ import { AgregarPerfilesComponent } from './agregar-perfiles/agregar-perfiles.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    routing,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule

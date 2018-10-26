@@ -12,9 +12,5 @@ const routes: Routes = [
   {path: 'añadirPerfiles', component: AgregarPerfilesComponent}
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes,{ enableTracing: true })],
-  exports: [RouterModule]
-})
-export class AppRoutingModule {
-}
+
+export const routing = RouterModule.forRoot(routes);

@@ -37,21 +37,7 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       usuario: ['', Validators.required],
       contrasena: ['', Validators.required]
-    });
-
-    //Registra un usuario (temporal)
-    this.userService.register(this.usuariosValidos[0])
-      .pipe(first())
-      .subscribe(
-      data => {
-        this.alertService.success('Registration successful', true);
-        this.router.navigate(['/login']);
-      },
-      error => {
-        this.alertService.error(error);
-        this.loading = false;
-    });
-    
+    });  
    
     // resetea el status de login
     this.authenticationService.logout();

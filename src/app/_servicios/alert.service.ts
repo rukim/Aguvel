@@ -30,9 +30,11 @@ export class AlertService {
     error(message: string, keepAfterNavigationChange = false) {
         this.keepAfterNavigationChange = keepAfterNavigationChange;
         this.subject.next({ type: 'error', text: message });
+        console.log(this.subject)
     }
 
     getMessage(): Observable<any> {
+        console.log("asda")
         return this.subject.asObservable();
     }
 }

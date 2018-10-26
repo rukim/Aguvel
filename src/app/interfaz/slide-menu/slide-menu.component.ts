@@ -10,6 +10,7 @@ export class SlideMenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("caca");
   }
 
 }

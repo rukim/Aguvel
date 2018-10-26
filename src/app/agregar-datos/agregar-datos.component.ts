@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 
-import { AguaService } from '../_servicios';
+import { AguaService, AlertService } from '../_servicios';
 
 @Component({
   selector: 'app-agregar-datos',
@@ -13,18 +13,17 @@ import { AguaService } from '../_servicios';
 })
 export class AgregarDatosComponent implements OnInit {
 
-  
-  
   today: number = Date.now();
   dataForm: FormGroup;
   loading = false;
   submitted = false;
-  returnUrl: string;
+
+
   constructor( 
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
     private router: Router,
-    private aguaService: AguaService) {}
+    private aguaService: AguaService,
+    private alertService: AlertService) {}
 
   ngOnInit() {
     this.dataForm = this.formBuilder.group({
@@ -72,7 +71,8 @@ export class AgregarDatosComponent implements OnInit {
     this.aguaService.register(this.dataForm.value)
       .pipe(first())
       .subscribe(
-        data => {         
+        data => {   
+          this.alertService.success('Registro de datos correcto',true);      
           this.router.navigate(['/datos']);
         },
         error => {

@@ -39,8 +39,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
                     return of(new HttpResponse({ status: 200, body: body }));
                 } else {
-                    // else return 400 bad request
-                    return throwError({ error: { message: 'Username or password is incorrect' } });
+                    // else return 400 bad request                   
+                    return throwError({ error: { message: 'Usuario o Contraseña Incorrecto' } });
                 }
             }
 
@@ -96,7 +96,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 // get new user object from post body
                 let newDatosAgua = request.body;
 
-                // save new user
+                // guarda agua
                 newDatosAgua.id = datosAgua.length + 1;
                 newDatosAgua.fecha = this.datePipe.transform(date,"dd-MM-yyyy h:mm a"); 
                 datosAgua.push(newDatosAgua);
