@@ -1,5 +1,48 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
+/*Estilos de la barra de opciones principales: empieza*/
+
+header{
+  width: 100;
+  background: #4E94AB;
+}
+
+#btn-menu{
+  display: none;
+}
+
+header label{
+  display: none;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  border-right: 1px solid #fff;
+}
+
+header label:hover{
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.menu ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.menu li:hover{
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.menu li a{
+  display: block;
+  padding: 15px 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/*Estilos de la barra de opciones principales: termina*/
 
 .loginmodal-container:focus, .loginmodal-container:hover {
   transform: scale(1.1);
@@ -29,6 +72,8 @@
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   font-family: roboto;
+  /* opacity: 0.88; //Es para hacer el div levemente transparente*/
+  /* filter: alpha(opacity=50); */
 }
 
 .loginmodal-container h1 {
@@ -80,7 +125,7 @@
   color: #fff;
   text-shadow: 0 1px rgba(0,0,0,0.1); 
   background-color: #4d90fe;
-  padding: 17px 0px;
+  padding: 10px 0px;
   font-family: roboto;
   font-size: 14px;
 }
